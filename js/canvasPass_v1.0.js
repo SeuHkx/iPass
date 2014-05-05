@@ -5,13 +5,6 @@
  * Time: 下午3:26
  *
  *
- * 初始化一个画线的变量index来调用对应的方法. 先进行碰撞检测，检测完过后，自动画线，然后再进行线段的调整。修复碰撞检测
- * 画线思路，使用两个canvas。一个画线，一个画真实的线。
- *                  this.touch =("createTouch" in document);//判定是否为手持设备
- *                    this.StartEvent = this.touch ? "touchstart" : "mousedown";//支持触摸式使用相应的事件替代
- *                    this.MoveEvent = this.touch ? "touchmove" : "mousemove";
- *                   this.EndEvent = this.touch ? "touchend" : "mouseup";
- *
  */
 (function(doc, win) {
     /**
@@ -489,7 +482,7 @@
                          * 设置状态
                          */
                         el.setAttribute('data-index', _index);
-                        //TODO
+
                         str = pointData._data.join('--');
 
                         activeDiv.tipsPass(str);
@@ -620,7 +613,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -667,7 +659,7 @@
                              *
                              */
                             that._end(el,function(){
-                                 //TODO
+
                                 /**
                                  * 结束的时候进行判断
                                  *
@@ -747,7 +739,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -789,7 +780,6 @@
                                 }
                             });
                             that._end(el,function(){
-                                //TODO
                                 /**
                                  * 结束的时候进行判断
                                  *
@@ -1107,7 +1097,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -1227,7 +1216,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -1269,7 +1257,6 @@
                                 }
                             });
                             that._end(el,function(){
-                                //TODO
                                 /**
                                  * 结束的时候进行判断
                                  *
@@ -1347,7 +1334,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -1389,7 +1375,6 @@
                                 }
                             });
                             that._end(el,function(){
-                                //TODO
                                 /**
                                  * 结束的时候进行判断
                                  *
@@ -1467,7 +1452,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -1509,7 +1493,6 @@
                                 }
                             });
                             that._end(el,function(){
-                                //TODO
                                 /**
                                  * 结束的时候进行判断
                                  *
@@ -1587,7 +1570,6 @@
                                  * 进行碰撞检测.
                                  *
                                  */
-                                //TODO 在这里进行操作
                                 var i = 0,
                                     num ,
                                     l = that.circle.length;
@@ -1629,7 +1611,6 @@
                                 }
                             });
                             that._end(el,function(){
-                                //TODO
                                 /**
                                  * 结束的时候进行判断
                                  *

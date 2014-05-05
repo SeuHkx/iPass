@@ -5,12 +5,6 @@
  * Time: 下午3:26
  *
  *
- * 初始化一个画线的变量index来调用对应的方法. 先进行碰撞检测，检测完过后，自动画线，然后再进行线段的调整。
- * 画线思路，使用两个canvas。一个画线，一个画真实的线。
- *                  this.touch =("createTouch" in document);//判定是否为手持设备
- *                    this.StartEvent = this.touch ? "touchstart" : "mousedown";//支持触摸式使用相应的事件替代
- *                    this.MoveEvent = this.touch ? "touchmove" : "mousemove";
- *                   this.EndEvent = this.touch ? "touchend" : "mouseup";
  *
  */
 (function(doc, win) {
