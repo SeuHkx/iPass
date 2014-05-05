@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="apple-touch-startup-image" href="startup.png"/>
+	<link rel="apple-touch-icon" href="iphon_tetris_icon.png"/>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#point{
+			width: 100px;
+			height: 100px;
+			background: chocolate;
+			margin: 110px 0 95px 40px;
+		}
+		#point1{
+			width: 50px;
+			height: 50px;
+			background: #0740d2;
+			position: absolute;
+
+		}
+		#wrap{
+			position: absolute;
+			width: 320px;
+			height: 280px;
+			top: 180px;
+			left: 20px;
+		}
+	</style>
+</head>
+<body>
+<div id="wrap" style="height: 300px;background: #64d2a9">
+	<div id="point">
+	</div>
+</div>
+<div id="point1"></div>
+
+<script>
+	window.onload = function(){
+		var point1 = document.getElementById('point');
+		var point = document.getElementById('point1');
+		var wrap = document.getElementById('wrap');
+
+		function test (obj,dobj){
+			var _left = obj.offsetLeft;
+			var _d_left =  dobj.offsetParent.offsetLeft + dobj.offsetLeft;
+
+			var _right =  obj.offsetLeft + obj.offsetWidth;
+			var _d_right = dobj.offsetParent.offsetLeft + dobj.offsetLeft + dobj.offsetWidth;
+
+
+			var _top = obj.offsetTop + obj.offsetHeight;
+			var _d_top =   dobj.offsetParent.offsetTop + dobj.offsetTop;
+
+
+			var _bottom =  obj.offsetTop + obj.offsetHeight;
+			var _d_bottom  =    dobj.offsetParent.offsetTop + dobj.offsetTop + dobj.offsetHeight;
+
+			if(_d_top <= _top && _left >= _d_left && _right <= _d_right && _bottom <= _d_bottom){
+				return true;
+			}else{
+				return false;
+
+			}
+		}
+
+
+		function start(event){
+			if(!point)return false;
+			point.style.left = event.touches[0].clientX -25+ 'px';
+			point.style.top =  event.touches[0].clientY -25+ 'px';
+		}
+		function move (event){
+
+			point.style.left = event.changedTouches[0].clientX -25+ 'px';
+			point.style.top =  event.changedTouches[0].clientY -25+ 'px';
+
+			if(test(point,point1)){
+				point1.style.backgroundColor = 'yellow';
+			}else{
+				point1.style.backgroundColor = 'chocolate';
+			}
+
+		}
+
+
+
+
+		document.addEventListener('touchstart',start,false);
+		document.addEventListener('touchmove',move,false);
+
+
+	}
+</script>
+</body>
+</html>
