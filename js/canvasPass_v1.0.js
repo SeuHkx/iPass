@@ -4,7 +4,6 @@
  * Date: 14-4-24
  * Time: 下午3:26
  *
- *
  */
 (function(doc, win) {
     /**
